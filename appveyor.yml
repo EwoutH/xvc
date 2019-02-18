@@ -6,7 +6,9 @@ environment:
    - target: x64
    - target: Arm64
 
-before_build: cmake . -A %target%
+before_build: 
+ - SET PATH=%PATH%;C:\Python37-x64;C:\Python37-x64\Scripts
+ - cmake . -A %target%
 
 build:
   project: xvc.sln
