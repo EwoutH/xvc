@@ -1,12 +1,12 @@
 image: Visual Studio 2017
 configuration: Release
-environment:
-  target:
-   - x86_64
-   - arm64
-
 matrix:
   include: 
+    target:
+     - x86_64
+     - arm64
+
+before_build:
    - set XVC_TARGET_ARCH=%target%
    - cmake .
 
