@@ -6,9 +6,10 @@ environment:
    - target: x64
    - target: Arm64
 
-before_build: cmake .
+before_build: cmake . -A %target%
 
-build_script: msbuild xvc.sln -A %target%
+build:
+  project: xvc.sln
   
 artifacts:
     - path: bin\Release\*.*
