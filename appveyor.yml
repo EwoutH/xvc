@@ -7,7 +7,7 @@ environment:
    - target: arm64
 
 before_build:
-   - setx XVC_TARGET_ARCH=%target% & echo %XVC_TARGET_ARCH%
+   - setx XVC_TARGET_ARCH %target%
    - cmake .
 
 build:
