@@ -12,7 +12,7 @@ build:
   project: xvc.sln
   
 artifacts:
-    - path: bin\Release\*.*
+    - path: $(target)\Release\*.*
       name: $(APPVEYOR_PROJECT_NAME)-$(target)
 
 deploy:
