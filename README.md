@@ -1,4 +1,4 @@
-# xvc codec
+# xvc codec [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/OpenVisualCloud/SVT-AV1?branch=master&svg=true)](https://ci.appveyor.com/project/OpenVisualCloud/SVT-AV1)
 
 The xvc codec is a next-generation software-defined video compression format, built using
 world-class compression technologies.
