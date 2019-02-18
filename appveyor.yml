@@ -1,7 +1,6 @@
 image: Visual Studio 2017
 configuration: Release
-env:
-  target:
+target:
    - x86_64
    - arm64
 
