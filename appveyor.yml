@@ -1,5 +1,6 @@
 image: Visual Studio 2017
 configuration: Release
+platform: x64
 
 before_build: cmake .
 
@@ -9,3 +10,12 @@ build:
 artifacts:
     - path: bin\Release\*.*
       name: $(APPVEYOR_PROJECT_NAME)
+
+deploy:
+  - provider: GitHub
+    artifact: $(APPVEYOR_PROJECT_NAME)
+    auth_token:
+      secure: 'hY5Mk6KOwgQ97TzEBsM7Woqr1ZIm5QTvHg8EvxMV1x8j3wk/3mNBMqWFFbEIBK0i'
+    prerelease: true
+    on:
+      appveyor_repo_tag: true
