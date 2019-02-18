@@ -1,8 +1,14 @@
 image: Visual Studio 2017
 configuration: Release
-platform: x86_64
+env:
+  target:
+   - x86_64
+   - arm64
 
-before_build: cmake .
+
+before_build: 
+ - set XVC_TARGET_ARCH=%target%
+ - cmake .
 
 build:
   project: xvc.sln
