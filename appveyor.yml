@@ -3,15 +3,12 @@ configuration: Release
 
 environment:
   matrix:
-   - target: x86_64
-   - target: arm64
+   - target: x64
+   - target: Arm64
 
-before_build:
-   - setx XVC_TARGET_ARCH %target%
-   - cmake .
+before_build: cmake .
 
-build:
-  project: xvc.sln
+build_script: msbuild xvc.sln -A %target%
   
 artifacts:
     - path: bin\Release\*.*
