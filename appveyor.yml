@@ -7,7 +7,7 @@ environment:
    - target: arm64
 
 before_build:
-   - set XVC_TARGET_ARCH=%target%
+   - set XVC_TARGET_ARCH=%target% & echo %target%
    - cmake .
 
 build:
@@ -15,11 +15,11 @@ build:
   
 artifacts:
     - path: bin\Release\*.*
-      name: $(APPVEYOR_PROJECT_NAME)
+      name: $(APPVEYOR_PROJECT_NAME)-$(target)
 
 deploy:
   - provider: GitHub
-    artifact: $(APPVEYOR_PROJECT_NAME)
+    artifact: $(APPVEYOR_PROJECT_NAME)-$(target)
     auth_token:
       secure: 'hY5Mk6KOwgQ97TzEBsM7Woqr1ZIm5QTvHg8EvxMV1x8j3wk/3mNBMqWFFbEIBK0i'
     prerelease: true
