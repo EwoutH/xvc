@@ -8,6 +8,9 @@ compiler:
 os:
   - linux
   - osx
+arch:
+  - amd64
+  - arm64
 
 addons:
   homebrew:
@@ -30,3 +33,5 @@ matrix:
   exclude:
     - os: osx
       compiler: gcc
+    - os: osx
+      arch: arm64
